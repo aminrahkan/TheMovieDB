@@ -1,4 +1,4 @@
-package ir.aminrahkan.themoviedb
+package ir.aminrahkan.themoviedb.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
