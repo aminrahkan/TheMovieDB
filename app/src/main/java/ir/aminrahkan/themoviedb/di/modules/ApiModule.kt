@@ -5,8 +5,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.aminrahkan.data.api.ApiService
-import ir.aminrahkan.themoviedb.app.Constants
+import ir.aminrahkan.themoviedb.api.HeadersInterceptor
+import ir.aminrahkan.themoviedb.api.ApiConstants
+import ir.aminrahkan.themoviedb.api.AuthenticationInterceptor
+import ir.aminrahkan.themoviedb.app.AppConstants
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -26,25 +30,20 @@ class ApiModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(Constants.TimeOut, TimeUnit.SECONDS)
-            .readTimeout(Constants.TimeOut, TimeUnit.SECONDS)
-            .writeTimeout(Constants.TimeOut, TimeUnit.SECONDS)
-            .addInterceptor {
-                val oldRequest = it.request()
-                val newRequestBuilder = oldRequest.newBuilder()
-                //TODO Token must be set here
-                newRequestBuilder.addHeader("Content-Type", "application/json")
-                newRequestBuilder.method(oldRequest.method, oldRequest.body)
-
-                return@addInterceptor it.proceed(newRequestBuilder.build())
-            }.build()
+            .connectTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
+            .readTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
+            .writeTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
+            .addInterceptor(AuthenticationInterceptor())
+            .addInterceptor(HeadersInterceptor())
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .build()
     }
 
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .client(okHttpClient).baseUrl(Constants.BaseUrl)
+            .client(okHttpClient).baseUrl(ApiConstants.BaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

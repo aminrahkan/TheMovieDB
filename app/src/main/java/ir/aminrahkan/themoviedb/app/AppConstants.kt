@@ -6,9 +6,11 @@ package ir.aminrahkan.themoviedb.app
 // Project name : TheMovieDB
 
 
-object Constants {
+object AppConstants {
 
-    const val BaseUrl = ""
+
+
+
     const val TimeOut = 20L
 
 }
