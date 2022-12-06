@@ -12,7 +12,7 @@ import okhttp3.Response
 class HeadersInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        request = request.newBuilder().addHeader("Content-Type", "application/json").build()
+        request = request.newBuilder().addHeader("Content-Type", "application/json;charset=utf-8").build()
         return chain.proceed(request)
     }
 }

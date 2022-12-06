@@ -1,4 +1,4 @@
-package ir.aminrahkan.presentaion
+package ir.aminrahkan.presentation
 
 import org.junit.Test
 
