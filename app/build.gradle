@@ -51,17 +51,20 @@ dependencies {
     //endregion
 
     //region Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     //endregion
 
     //region OkHttp
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    def okhttp_version = "4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     //endregion
 
     //region Coroutine
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    def coroutine_version = "1.6,1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
     //endregion
 
     //region Other Modules
