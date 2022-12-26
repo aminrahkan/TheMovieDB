@@ -8,6 +8,4 @@ package ir.aminrahkan.themoviedb.app
 
 object AppConstants {
 
-    const val TimeOut = 20L
-
 }

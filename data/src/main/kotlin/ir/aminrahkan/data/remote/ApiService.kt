@@ -1,4 +1,4 @@
-package ir.aminrahkan.data.api
+package ir.aminrahkan.data.remote
 
 import okhttp3.Response
 import retrofit2.http.GET
@@ -11,6 +11,6 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("/movie/popular")
-    suspend fun getPopularVideos():Response<>
+//    @GET("/movie/popular")
+//    suspend fun getPopularVideos():Response<>
 }

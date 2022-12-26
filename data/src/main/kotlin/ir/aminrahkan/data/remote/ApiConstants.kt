@@ -1,4 +1,4 @@
-package ir.aminrahkan.themoviedb.common.api
+package ir.aminrahkan.data.remote
 
 
 // Developer : Amin Rahkan - Amin.Rahkan7@gmail.com  

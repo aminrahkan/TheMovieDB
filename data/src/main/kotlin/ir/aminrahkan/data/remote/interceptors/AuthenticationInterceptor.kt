@@ -1,6 +1,6 @@
-package ir.aminrahkan.themoviedb.common.api.interceptors
+package ir.aminrahkan.data.remote.interceptors
 
-import ir.aminrahkan.themoviedb.common.api.ApiConstants
+import ir.aminrahkan.data.remote.ApiConstants
 import okhttp3.Interceptor
 import okhttp3.Response
 

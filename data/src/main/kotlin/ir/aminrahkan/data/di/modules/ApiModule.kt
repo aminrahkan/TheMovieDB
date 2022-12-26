@@ -1,4 +1,4 @@
-package ir.aminrahkan.data.remote.di.modules
+package ir.aminrahkan.data.di.modules
 
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package ir.aminrahkan.data.api
+package ir.aminrahkan.data.remote
 
 
 // Developer : Amin Rahkan - Amin.Rahkan7@gmail.com  

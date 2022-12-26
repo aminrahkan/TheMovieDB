@@ -1,6 +1,7 @@
 package ir.aminrahkan.presentation.ui.base
 
 import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 
 
 // Developer : Amin Rahkan - Amin.Rahkan7@gmail.com  
@@ -8,5 +9,5 @@ import android.app.Activity
 // Project name : TheMovieDB
 
 
-open class BaseActivity : Activity() {
+open class BaseActivity : AppCompatActivity() {
 }
