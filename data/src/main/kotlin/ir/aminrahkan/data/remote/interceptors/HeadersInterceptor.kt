@@ -1,4 +1,4 @@
-package ir.aminrahkan.themoviedb.api
+package ir.aminrahkan.themoviedb.common.api.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,14 +1,13 @@
-package ir.aminrahkan.themoviedb.di.modules
+package ir.aminrahkan.data.remote.di.modules
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ir.aminrahkan.data.api.ApiService
-import ir.aminrahkan.themoviedb.api.HeadersInterceptor
-import ir.aminrahkan.themoviedb.api.ApiConstants
-import ir.aminrahkan.themoviedb.api.AuthenticationInterceptor
-import ir.aminrahkan.themoviedb.app.AppConstants
+import ir.aminrahkan.data.remote.ApiConstants
+import ir.aminrahkan.data.remote.ApiService
+import ir.aminrahkan.data.remote.interceptors.HeadersInterceptor
+import ir.aminrahkan.data.remote.interceptors.AuthenticationInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,9 +29,9 @@ class ApiModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
-            .readTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
-            .writeTimeout(AppConstants.TimeOut, TimeUnit.SECONDS)
+            .connectTimeout(ApiConstants.ApiTimeOut, TimeUnit.SECONDS)
+            .readTimeout(ApiConstants.ApiTimeOut, TimeUnit.SECONDS)
+            .writeTimeout(ApiConstants.ApiTimeOut, TimeUnit.SECONDS)
             .addInterceptor(AuthenticationInterceptor())
             .addInterceptor(HeadersInterceptor())
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))

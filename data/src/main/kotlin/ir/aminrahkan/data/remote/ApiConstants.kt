@@ -1,4 +1,4 @@
-package ir.aminrahkan.themoviedb.api
+package ir.aminrahkan.themoviedb.common.api
 
 
 // Developer : Amin Rahkan - Amin.Rahkan7@gmail.com  
@@ -8,6 +8,7 @@ package ir.aminrahkan.themoviedb.api
 
 object ApiConstants {
 
+    const val ApiTimeOut = 20L
     const val API_KEY = "540d9defc1a38dd5782922859c384ce9"
     const val BaseUrl = "https://api.themoviedb.org/3/"
     const val API_READ_ACCESS_TOKEN =

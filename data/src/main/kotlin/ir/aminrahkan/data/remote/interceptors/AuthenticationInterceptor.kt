@@ -1,5 +1,6 @@
-package ir.aminrahkan.themoviedb.api
+package ir.aminrahkan.themoviedb.common.api.interceptors
 
+import ir.aminrahkan.themoviedb.common.api.ApiConstants
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -14,7 +15,7 @@ class AuthenticationInterceptor : Interceptor {
         var request = chain.request()
         request = request.newBuilder().addHeader(
             "Authorization",
-            ApiConstants.PREFIX_TOKEN + ApiConstants.API_READ_ACCESS_TOKEN
+            ApiConstants.PREFIX_TOKEN + ApiConstants.API_KEY
         ).build()
         return chain.proceed(request)
     }
